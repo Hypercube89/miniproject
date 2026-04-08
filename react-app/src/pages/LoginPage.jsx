@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getCookie, setCookie } from '../utils/cookies'
 import '../styles/auth.css'
 
@@ -8,6 +8,7 @@ function LoginPage() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [remember, setRemember] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const saved = getCookie('username')
@@ -34,10 +35,11 @@ function LoginPage() {
 
     setCookie('username', username, remember ? 7 : 1)
     alert('Login Successful')
+    navigate('/')
   }
 
   return (
-    <>
+    <div className="auth-page">
       <div className="bg-overlay"></div>
 
       <div className="auth-card">
@@ -88,7 +90,7 @@ function LoginPage() {
           </p>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 

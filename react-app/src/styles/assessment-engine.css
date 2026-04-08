@@ -1,0 +1,92 @@
+.assessment-engine-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #d7f7ff 0%, #7fd6ff 35%, #2b77c7 70%, #0d2c55 100%);
+  color: #08304a;
+}
+
+.assessment-engine-page .page {
+  width: 100%;
+  padding: 40px 15px 30px;
+}
+
+.assessment-engine-page .topbar {
+  max-width: 980px;
+  margin: 0 auto 18px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.assessment-engine-page .card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.assessment-engine-page .block {
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.assessment-engine-page .q {
+  padding: 12px 10px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.assessment-engine-page label {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+.assessment-engine-page textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.assessment-engine-page .actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.assessment-engine-page .btn {
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.assessment-engine-page .primary {
+  background: linear-gradient(to bottom, #ffffff, #b9f2ff);
+  color: #0a3c6b;
+}
+
+.assessment-engine-page .ghost {
+  background: rgba(255, 255, 255, 0.35);
+  color: #0a3c6b;
+}
+
+.assessment-engine-page .footer {
+  max-width: 980px;
+  margin: 18px auto 0;
+  text-align: center;
+}
+
+.assessment-engine-page .footer a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: bold;
+}

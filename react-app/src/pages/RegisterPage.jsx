@@ -55,11 +55,12 @@ class RegisterPage extends Component {
     }
 
     alert('Registration Successful')
+    window.location.hash = '#/login'
   }
 
   render() {
     return (
-      <>
+      <div className="auth-page">
         <div className="bg-overlay"></div>
 
         <div className="auth-card register-card">
@@ -124,7 +125,7 @@ class RegisterPage extends Component {
             </p>
           </form>
         </div>
-      </>
+      </div>
     )
   }
 }

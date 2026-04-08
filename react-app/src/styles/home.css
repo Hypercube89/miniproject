@@ -1,0 +1,166 @@
+.home-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #1a73e8);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.top-bar {
+  width: 92%;
+  margin: 20px auto;
+  padding: 14px 18px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.quote {
+  width: 65%;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-btn {
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 22px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  transition: 0.2s;
+}
+
+.auth-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.signup {
+  background: linear-gradient(to right, #00d4ff, #1a73e8);
+  border: none;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 70px;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.logo span {
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.55);
+}
+
+.tagline {
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.search-area {
+  width: 600px;
+  margin: 28px auto 18px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.search-box {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+  color: white;
+}
+
+.search-box::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.search-icon {
+  width: 55px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.search-icon:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.home-shell .btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 26px;
+  font-weight: bold;
+  margin: 8px;
+  transition: 0.2s;
+}
+
+.home-shell .primary {
+  background: linear-gradient(to right, #00d4ff, #1a73e8);
+  color: white;
+}
+
+.home-shell .secondary {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: white;
+}
+
+.bottom-link {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.feedback-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 26px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: white;
+}

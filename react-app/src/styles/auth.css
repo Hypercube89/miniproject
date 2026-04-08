@@ -1,21 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
+.auth-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #5a2ca0, #3b1a6e, #1b0b3d);
-  overflow: hidden;
+  overflow: auto;
   position: relative;
+  font-family: Arial, sans-serif;
 }
 
-body::before {
+.auth-page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -34,6 +28,7 @@ body::before {
   height: 55%;
   width: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  pointer-events: none;
 }
 
 .auth-card {
@@ -113,7 +108,7 @@ body::before {
   text-decoration: underline;
 }
 
-.btn {
+.auth-page .btn {
   width: 100%;
   padding: 12px;
   border: none;
@@ -125,7 +120,7 @@ body::before {
   color: #3b1a6e;
 }
 
-.btn:hover {
+.auth-page .btn:hover {
   background: #eaeaea;
 }
 

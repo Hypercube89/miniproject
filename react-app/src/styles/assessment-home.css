@@ -1,0 +1,61 @@
+.assessment-home-page {
+  min-height: 100vh;
+  background-image: url('/images/purpleimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.assessment-home-page .card {
+  width: 420px;
+  padding: 35px 30px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.assessment-home-page h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.assessment-home-page p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.topic-btn {
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.back {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.back a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}

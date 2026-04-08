@@ -1,54 +1,50 @@
-# React + Vite
+# SearchLearn React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the production web app for the project.
 
-Currently, two official plugins are available:
+## Features Migrated From Legacy Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Main SearchLearn homepage (from mainpage.html) is now React home route
+- Learning module home and engine-specific learning pages
+- Engine "How it works" pages
+- Assessment topic selector and engine-wise scored quizzes
+- Feedback and contact page
+- Login and register screens
 
-## React Compiler
+## Industry Standard App Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-## Standard Folder Structure
-
-```text
 src/
-	pages/
-		LoginPage.jsx
-		RegisterPage.jsx
-	router/
-		AppRouter.jsx
-	styles/
-		auth.css
-	utils/
-		cookies.js
-	App.jsx
-	main.jsx
-```
+  components/
+  data/
+  pages/
+    home/
+    learning/
+    assessment/
+    feedback/
+  router/
+  styles/
+  utils/
+  App.jsx
+  main.jsx
+
+public/
+  images/
+
+## Run Locally
+
+1. npm install
+2. npm run dev
+
+## Build
+
+npm run build
 
 ## Deploy To GitHub Pages
 
-1. Install dependencies:
+1. npm run deploy
+2. In repository Settings -> Pages:
+   - Source: Deploy from a branch
+   - Branch: gh-pages
+   - Folder: /(root)
 
-```bash
-npm install
-```
-
-2. Deploy:
-
-```bash
-npm run deploy
-```
-
-3. In GitHub repository settings, go to Pages and set:
-- Source: Deploy from a branch
-- Branch: gh-pages
-- Folder: /(root)
-
-This app uses `HashRouter`, so all routes work on GitHub Pages.
+This app uses HashRouter and Vite base ./ so all routes work on GitHub Pages.
