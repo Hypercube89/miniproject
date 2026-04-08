@@ -14,3 +14,41 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Standard Folder Structure
+
+```text
+src/
+	pages/
+		LoginPage.jsx
+		RegisterPage.jsx
+	router/
+		AppRouter.jsx
+	styles/
+		auth.css
+	utils/
+		cookies.js
+	App.jsx
+	main.jsx
+```
+
+## Deploy To GitHub Pages
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Deploy:
+
+```bash
+npm run deploy
+```
+
+3. In GitHub repository settings, go to Pages and set:
+- Source: Deploy from a branch
+- Branch: gh-pages
+- Folder: /(root)
+
+This app uses `HashRouter`, so all routes work on GitHub Pages.

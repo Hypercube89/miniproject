@@ -1,71 +1,71 @@
-import React, { Component } from "react";
-import "./register.css";
+import { Component } from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/auth.css'
 
-class Register extends Component {
+class RegisterPage extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      name: "",
-      email: "",
-      dob: "",
-      password: "",
-      confirmPassword: "",
+      name: '',
+      email: '',
+      dob: '',
+      password: '',
+      confirmPassword: '',
       show: false,
-    };
+    }
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-    
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   togglePassword = () => {
-    this.setState({ show: !this.state.show });
-  };
+    this.setState((prev) => ({ show: !prev.show }))
+  }
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { name, dob, password, confirmPassword } = this.state;
+    const { name, dob, password, confirmPassword } = this.state
 
-    const namePattern = /^[a-zA-Z ]{3,30}$/;
-    const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+    const namePattern = /^[a-zA-Z ]{3,30}$/
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/
 
-    const today = new Date();
-    const selectedDate = new Date(dob);
+    const today = new Date()
+    const selectedDate = new Date(dob)
 
     if (!namePattern.test(name)) {
-      alert("Invalid name");
-      return;
+      alert('Invalid name')
+      return
     }
 
     if (selectedDate > today) {
-      alert("Invalid DOB");
-      return;
+      alert('Invalid DOB')
+      return
     }
 
     if (!passwordPattern.test(password)) {
-      alert("Weak password");
-      return;
+      alert('Weak password')
+      return
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
+      alert('Passwords do not match')
+      return
     }
 
-    alert("Registration Successful ✅");
-  };
+    alert('Registration Successful')
+  }
 
   render() {
     return (
       <>
         <div className="bg-overlay"></div>
 
-        <div className="register-card">
+        <div className="auth-card register-card">
           <h1>Register</h1>
 
-          <form className="register-form" onSubmit={this.handleSubmit}>
+          <form className="auth-form" onSubmit={this.handleSubmit}>
             <div className="input-box">
               <input
                 type="text"
@@ -91,7 +91,7 @@ class Register extends Component {
 
             <div className="input-box">
               <input
-                type={this.state.show ? "text" : "password"}
+                type={this.state.show ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
                 onChange={this.handleChange}
@@ -100,15 +100,15 @@ class Register extends Component {
 
             <div className="input-box">
               <input
-                type={this.state.show ? "text" : "password"}
+                type={this.state.show ? 'text' : 'password'}
                 name="confirmPassword"
                 placeholder="Confirm Password"
                 onChange={this.handleChange}
               />
             </div>
 
-            <div style={{ marginBottom: "15px", textAlign: "left" }}>
-              <label style={{ color: "white", fontSize: "14px" }}>
+            <div className="toggle-row">
+              <label>
                 <input type="checkbox" onChange={this.togglePassword} />
                 Show Passwords
               </label>
@@ -120,13 +120,13 @@ class Register extends Component {
 
             <p className="bottom-text">
               Already have an account?
-              <a href="/login"> Login</a>
+              <Link to="/login"> Login</Link>
             </p>
           </form>
         </div>
       </>
-    );
+    )
   }
 }
 
-export default Register;
+export default RegisterPage

@@ -6,19 +6,17 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: linear-gradient(to bottom, #5a2ca0, #3b1a6e, #1b0b3d);
   overflow: hidden;
   position: relative;
 }
 
-
 body::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -29,38 +27,38 @@ body::before {
   opacity: 0.2;
 }
 
-
 .bg-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 55%;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
 }
 
-
-.register-card {
+.auth-card {
   position: relative;
-  width: 420px;
+  width: 380px;
   padding: 35px 30px;
   border-radius: 14px;
   text-align: center;
-
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.register-card h1 {
+.register-card {
+  width: 420px;
+}
+
+.auth-card h1 {
   color: white;
   font-size: 32px;
   margin-bottom: 25px;
 }
 
-
-.input-box {
+.auth-form .input-box {
   text-align: left;
   margin-bottom: 15px;
 }
@@ -71,7 +69,6 @@ body::before {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   outline: none;
-
   background: rgba(255, 255, 255, 0.12);
   color: white;
   font-size: 14px;
@@ -81,7 +78,6 @@ body::before {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Label for DOB */
 .dob-label {
   display: block;
   font-size: 13px;
@@ -89,6 +85,33 @@ body::before {
   color: rgba(255, 255, 255, 0.85);
 }
 
+.toggle-row {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.toggle-row label {
+  color: white;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  font-size: 13px;
+}
+
+.remember,
+.forgot {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
 
 .btn {
   width: 100%;
@@ -98,7 +121,6 @@ body::before {
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
-
   background: white;
   color: #3b1a6e;
 }
@@ -107,7 +129,6 @@ body::before {
   background: #eaeaea;
 }
 
-/* Bottom text */
 .bottom-text {
   margin-top: 18px;
   font-size: 13px;
