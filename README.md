@@ -1,17 +1,50 @@
-# MiniProject
+# SearchLearn React App
 
-This repository is now organized in an industry-style layout with a production React app and archived legacy files.
+This is the production web app for the project.
 
-## Structure
+## Features Migrated From Legacy Pages
 
-- react-app/: production web app (Vite + React)
-- legacy/: archived static HTML/CSS/images from the older version
+- Main SearchLearn homepage (from mainpage.html) is now React home route
+- Learning module home and engine-specific learning pages
+- Engine "How it works" pages
+- Assessment topic selector and engine-wise scored quizzes
+- Feedback and contact page
+- Login and register screens
 
-## Deploying
+## Industry Standard App Structure
 
-1. Go to react-app folder.
-2. Run npm install.
-3. Run npm run deploy.
-4. In GitHub settings, set Pages source to gh-pages branch and root folder.
+src/
+  components/
+  data/
+  pages/
+    home/
+    learning/
+    assessment/
+    feedback/
+  router/
+  styles/
+  utils/
+  App.jsx
+  main.jsx
 
-The React app uses hash-based routing so multi-page navigation works on GitHub Pages.
+public/
+  images/
+
+## Run Locally
+
+1. npm install
+2. npm run dev
+
+## Build
+
+npm run build
+
+## Deploy To GitHub Pages
+
+1. npm run deploy
+2. In repository Settings -> Pages:
+   - Source: Deploy from a branch
+   - Branch: gh-pages
+   - Folder: /(root)
+
+This app uses HashRouter and Vite base ./ so all routes work on GitHub Pages.
