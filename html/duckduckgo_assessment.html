@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuckDuckGo Assessment</title>
+  <link rel="stylesheet" href="../css/assessment_questions.css" />
+  <link rel="icon" type="image/x-icon" href="../images/ddg.png">
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="topbar">
+      <h1>DuckDuckGo Assessment</h1>
+      <p>Answer the questions and submit your assessment</p>
+    </header>
+
+    <main class="card">
+
+      <form>
+
+        <section class="block">
+          <h2>Multiple Choice Questions</h2>
+
+          <div class="q">
+            <p>1) DuckDuckGo mainly focuses on?</p>
+            <label><input type="radio" name="q1"> Ads</label>
+            <label><input type="radio" name="q1"> Privacy</label>
+            <label><input type="radio" name="q1"> Games</label>
+            <label><input type="radio" name="q1"> Email service</label>
+          </div>
+
+          <div class="q">
+            <p>2) DuckDuckGo does not track?</p>
+            <label><input type="radio" name="q2"> Searches</label>
+            <label><input type="radio" name="q2"> Personal data</label>
+            <label><input type="radio" name="q2"> IP Address</label>
+            <label><input type="radio" name="q2"> All of the above</label>
+          </div>
+
+          <div class="q">
+            <p>3) DuckDuckGo is best described as a?</p>
+            <label><input type="radio" name="q3"> Search Engine</label>
+            <label><input type="radio" name="q3"> Web Browser only</label>
+            <label><input type="radio" name="q3"> Social media platform</label>
+            <label><input type="radio" name="q3"> Email service</label>
+          </div>
+
+          <div class="q">
+            <p>4) DuckDuckGo is popular because it provides?</p>
+            <label><input type="radio" name="q4"> Faster Wi-Fi</label>
+            <label><input type="radio" name="q4"> Anonymous searching</label>
+            <label><input type="radio" name="q4"> Free games</label>
+            <label><input type="radio" name="q4"> Cloud storage</label>
+          </div>
+
+          <div class="q">
+            <p>5) Which is a unique feature of DuckDuckGo?</p>
+            <label><input type="radio" name="q5"> Personalized ads</label>
+            <label><input type="radio" name="q5"> No user tracking</label>
+            <label><input type="radio" name="q5"> Paid searching</label>
+            <label><input type="radio" name="q5"> Offline mode only</label>
+          </div>
+
+        </section>
+
+        <section class="block">
+          <h2>Descriptive Questions</h2>
+
+          <div class="q">
+            <p>6) What is DuckDuckGo and why is it popular?</p>
+            <textarea rows="4" placeholder="Write your answer here..."></textarea>
+          </div>
+
+          <div class="q">
+            <p>7) Compare DuckDuckGo and Google in terms of privacy.</p>
+            <textarea rows="4" placeholder="Write your answer here..."></textarea>
+          </div>
+
+        </section>
+
+        <div class="actions">
+          <input type="submit" value="Submit Assessment" class="btn primary">
+          <input type="reset" value="Reset Answers" class="btn ghost">
+        </div>
+
+      </form>
+
+    </main>
+
+    <footer class="footer">
+      <a href="assessment.html">← Back to Topics</a>
+    </footer>
+
+  </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let score = 0;
+
+    const q1 = document.querySelector("input[name='q1']:checked");
+    const q2 = document.querySelector("input[name='q2']:checked");
+    const q3 = document.querySelector("input[name='q3']:checked");
+    const q4 = document.querySelector("input[name='q4']:checked");
+    const q5 = document.querySelector("input[name='q5']:checked");
+
+    if(!q1 || !q2 || !q3 || !q4 || !q5){
+      alert("Please answer all MCQ questions.");
+      return;
+    }
+
+    if(q1.parentElement.textContent.includes("Privacy")) score++;
+    if(q2.parentElement.textContent.includes("All of the above")) score++;
+    if(q3.parentElement.textContent.includes("Search Engine")) score++;
+    if(q4.parentElement.textContent.includes("Anonymous")) score++;
+    if(q5.parentElement.textContent.includes("No user tracking")) score++;
+
+    let message = "";
+
+    if(score === 5){
+      message = " Perfect! Excellent performance!";
+    }
+    else if(score >= 3){
+      message = " Good job! Keep improving!";
+    }
+    else{
+      message = " You need more practice. Try again!";
+    }
+
+    alert("Your Score: " + score + " / 5\n\n" + message);
+
+  });
+
+});
+</script>
+
+</body>
+</html>

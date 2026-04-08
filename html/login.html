@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="icon" type="image/x-icon" href="../images/lpage.png">
+</head>
+
+<body>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <div class="bg-overlay"></div>
+
+  <div class="login-card">
+    <h1>Login</h1>
+
+    <!-- Form -->
+    <form class="login-form" id="loginForm">
+
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <!-- Show Password -->
+      <div style="margin-bottom:15px; text-align:left;">
+        <label style="color:white; font-size:14px;">
+          <input type="checkbox" id="showPassword">
+          Show Password
+        </label>
+      </div>
+
+      <div class="row">
+        <label class="remember">
+          <input type="checkbox" id="remember">
+          Remember me
+        </label>
+
+        <a href="#" class="forgot">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+
+      <p class="bottom-text">
+        Don't have an account?
+        <a href="register.html">Register</a>
+      </p>
+
+    </form>
+  </div>
+  <div id="root"></div>
+
+  <!-- JavaScript -->
+  <script>
+
+    // Toggle password
+    document.getElementById("showPassword").addEventListener("change", function() {
+      const passwordField = document.getElementById("password");
+      passwordField.type = this.checked ? "text" : "password";
+    });
+
+
+    // Set Cookie
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Get Cookie
+    function getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) {
+          return c.substring(nameEQ.length);
+        }
+      }
+      return null;
+    }
+
+
+    // Handle login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const remember = document.getElementById("remember").checked;
+
+      const usernamePattern = /^[a-zA-Z0-9]{4,12}$/;
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+
+      if (!usernamePattern.test(username)) {
+        alert("Username must be 4-12 characters and contain only letters or numbers.");
+        return;
+      }
+
+      if (!passwordPattern.test(password)) {
+        alert("Password must contain at least 6 characters including uppercase, lowercase, number and special character.");
+        return;
+      }
+
+      // ✅ Save cookie ONLY if remember is checked
+      if (remember) {
+        setCookie("username", username, 7);
+      } else {
+        setCookie("username", username, 1);
+      }
+
+      alert("Login Successful ✅");
+    });
+
+
+    // Autofill username from cookie
+    window.onload = function() {
+      let savedUsername = getCookie("username");
+
+      if (savedUsername) {
+        document.getElementById("username").value = savedUsername;
+      }
+    };
+
+  </script>
+
+</body>
+</html>

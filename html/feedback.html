@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback & Contact Us</title>
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="icon" type="image/x-icon" href="../images/feedback.jpg">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Feedback & Contact Us</h1>
+
+<form class="feedback-form">
+
+<h2>Website Feedback</h2>
+
+<p>1. How do you rate the website design?</p>
+<input type="radio" name="design"> Excellent<br>
+<input type="radio" name="design"> Good<br>
+<input type="radio" name="design"> Average<br>
+<input type="radio" name="design"> Poor<br>
+
+<p>2. How easy is the website to navigate?</p>
+<input type="radio" name="navigation"> Very Easy<br>
+<input type="radio" name="navigation"> Easy<br>
+<input type="radio" name="navigation"> Difficult<br>
+<input type="radio" name="navigation"> Very Difficult<br>
+
+<p>3. How useful is the content provided on search engines?</p>
+<input type="radio" name="content"> Very Useful<br>
+<input type="radio" name="content"> Useful<br>
+<input type="radio" name="content"> Neutral<br>
+<input type="radio" name="content"> Not Useful<br>
+
+<p>4. Which section did you like the most?</p>
+<select>
+    <option>Introduction Page</option>
+    <option>Learning Page</option>
+    <option>Assessment Page</option>
+    <option>Overall Website</option>
+</select>
+
+<p>5. Would you recommend this website to others?</p>
+<input type="radio" name="recommend"> Yes<br>
+<input type="radio" name="recommend"> No<br>
+
+<h2>Suggestions(Optional)</h2>
+
+<p>6. What improvements would you suggest?</p>
+<textarea rows="4"></textarea>
+
+<p>7. Any additional comments or feedback?</p>
+<textarea rows="4"></textarea>
+
+<br>
+<input type="submit" value="Submit Feedback">
+
+</form>
+
+<!-- Contact Us Section -->
+<hr>
+
+<h2>Contact Us</h2>
+
+<p>
+ Email: <b>abc@gmail.com</b>
+</p>
+
+<p>
+ Phone: +91 99999 99999
+</p>
+
+</div>
+<script>
+
+  document.querySelector(".feedback-form")
+    .addEventListener("submit", function(event){
+
+      event.preventDefault(); // stop page refresh
+
+      const form = document.querySelector(".feedback-form");
+
+      form.innerHTML = `
+        <h2 style="text-align:center; color:green;">
+          ✅ Thank you for your feedback!
+        </h2>
+        <p style="text-align:center;">
+          We appreciate your valuable response. 🌿
+        </p>
+      `;
+
+  });
+
+</script>
+
+</body>
+</html>

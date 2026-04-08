@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SearchLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../images/mainpage.jpeg">
+</head>
+
+<body>
+<!-- <a href="http://localhost:5175">Login / Register</a> -->
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="quote">
+      <marquee id="quoteMarquee" scrollamount="6"></marquee>
+    </div>
+
+    <div class="auth">
+      <a href="http://localhost:5175/login" class="auth-btn" target="blank">Sign in</a>
+      <a href="http://localhost:5175/register" class="auth-btn signup" target="blank">Sign up</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="logo">Search<span>Learn</span></h1>
+
+    <p class="tagline">
+      Learn Search Engines • Explore Tools • Test Yourself
+    </p>
+
+    <div class="search-area">
+      <input type="text" class="search-box"
+        placeholder="Search: Google, Bing, DuckDuckGo..." />
+      <button class="search-icon">🔍</button>
+    </div>
+
+    <div class="btn-row">
+      <a href="learning.html" class="btn primary">Start Learning</a>
+      <a href="assessment.html" class="btn secondary">Take Assessment</a>
+    </div>
+
+    <div class="bottom-link">
+      <a href="feedback.html" class="feedback-btn">Feedback / Contact Us</a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+
+    /* =============================
+       1️⃣ RANDOM MARQUEE QUOTES
+    ============================== */
+
+    const quotes = [
+      "Knowledge grows when shared.",
+      "Search smart, not hard.",
+      "Learning never stops.",
+      "Curiosity drives innovation.",
+      "Explore. Learn. Improve."
+    ];
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quoteMarquee").innerText =
+      "✨ Quote of the Day: " + randomQuote + " ✨";
+
+
+    /* =============================
+       2️⃣ SMART SEARCH REDIRECT
+    ============================== */
+
+    document.querySelector(".search-icon")
+      .addEventListener("click", function(){
+
+      const value = document.querySelector(".search-box")
+        .value.trim().toLowerCase();
+
+      if(value === "google"){
+        window.location.href = "google_learning.html";
+      }
+      else if(value === "bing"){
+        window.location.href = "bing_learning.html";
+      }
+      else if(value === "duckduckgo" || value === "duck"){
+        window.location.href = "duckduckgo_learning.html";
+      }
+      else{
+        alert("Please type: Google, Bing, or DuckDuckGo");
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

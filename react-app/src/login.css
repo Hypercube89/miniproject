@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Purple sky background */
+  background: linear-gradient(to bottom, #5a2ca0, #3b1a6e, #1b0b3d);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Stars effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+}
+
+/* Extra overlay for depth */
+.bg-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 55%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+
+/* Glass login card */
+.login-card {
+  position: relative;
+  width: 380px;
+  padding: 35px 30px;
+  border-radius: 14px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.login-card h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+/* Input fields */
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 14px;
+}
+
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Remember + forgot row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px 0;
+  font-size: 13px;
+}
+
+.remember {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.forgot {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+
+  background: white;
+  color: #3b1a6e;
+}
+
+.btn:hover {
+  background: #eaeaea;
+}
+
+/* Bottom text */
+.bottom-text {
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bottom-text a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}

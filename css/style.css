@@ -1,0 +1,258 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+
+  /* Animated gradient background */
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #1a73e8);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+}
+
+/* Smooth background animation */
+@keyframes bgMove{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+
+
+@keyframes float{
+  0%,100%{ transform: translateY(0px); }
+  50%{ transform: translateY(-18px); }
+}
+
+/* Top Bar */
+.top-bar{
+  width: 92%;
+  margin: 20px auto;
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.quote{
+  width: 65%;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Auth Buttons */
+.auth-btn{
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 22px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  transition: 0.2s;
+}
+
+.auth-btn:hover{
+  background: rgba(255,255,255,0.25);
+}
+
+.signup{
+  background: linear-gradient(to right, #00d4ff, #1a73e8);
+  border: none;
+}
+
+.signup:hover{
+  filter: brightness(1.05);
+}
+
+/* Center hero section */
+.hero{
+  text-align: center;
+  margin-top: 70px;
+  position: relative;
+  z-index: 5;
+}
+
+.logo{
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.logo span{
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0,212,255,0.55);
+}
+
+.tagline{
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+}
+
+
+.search-area{
+  width: 600px;
+  margin: 28px auto 18px;
+  display: flex;
+  align-items: center;
+
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.search-box{
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+  color: white;
+}
+
+.search-box::placeholder{
+  color: rgba(255,255,255,0.65);
+}
+
+.search-icon{
+  width: 55px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+
+  background: rgba(255,255,255,0.18);
+  color: white;
+}
+
+.search-icon:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+
+.btn-row{
+  margin-top: 10px;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 26px;
+  font-weight: bold;
+  margin: 8px;
+  transition: 0.2s;
+}
+
+.primary{
+  background: linear-gradient(to right, #00d4ff, #1a73e8);
+  color: white;
+}
+
+.primary:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.secondary{
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: white;
+}
+
+.secondary:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.22);
+}
+
+
+.mini-info{
+  width: 900px;
+  margin: 35px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.info-card{
+  width: 260px;
+  padding: 16px;
+  border-radius: 18px;
+  text-align: left;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.info-card h3{
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.info-card p{
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Responsive */
+@media (max-width: 700px){
+  .search-area{
+    width: 92%;
+  }
+  .mini-info{
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo{
+    font-size: 55px;
+  }
+}
+/* Feedback / Contact Us button */
+.bottom-link{
+  margin-top: 35px;
+  text-align: center;
+}
+
+.feedback-btn{
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 26px;
+  font-weight: bold;
+
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: white;
+  transition: 0.2s;
+}
+
+.feedback-btn:hover{
+  background: rgba(255,255,255,0.24);
+  transform: translateY(-2px);
+}
+

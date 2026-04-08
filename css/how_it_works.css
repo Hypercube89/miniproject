@@ -1,0 +1,77 @@
+/* Page Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+/* Container */
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #ffd700;
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+/* Images */
+.section-img {
+  width: 400px;
+  max-width: 100%;
+  display: block;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Divider */
+hr {
+  margin: 30px auto;
+  width: 60%;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Audio */
+audio {
+  margin-top: 15px;
+}
+
+/* Back button */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
